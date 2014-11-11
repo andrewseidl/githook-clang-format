@@ -1,0 +1,22 @@
+#!/bin/bash
+
+STYLE=$(git config --get hooks.clang-format.style)
+if [[ -z "${STYLE}" ]] ; then
+	STYLEARG="-style=${STYLE}"
+else
+
+function format_file {
+	file="${1}"
+	clang-format -i ${STYLEARG} ${1}
+}
+
+case "${1}" in
+	--about )
+		echo "Runs clang-format on source files"
+		;;
+	* )
+		for file in `git diff-index --cached --name-only HEAD` ; do
+			format_file "${file}"
+		done
+		;;
+esac
