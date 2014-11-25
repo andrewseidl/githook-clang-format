@@ -1,13 +1,16 @@
 #!/bin/bash
 
 STYLE=$(git config --get hooks.clang-format.style)
-if [[ -z "${STYLE}" ]] ; then
+if [ -n "${STYLE}" ] ; then
 	STYLEARG="-style=${STYLE}"
 else
+	STYLEARG=""
+fi
 
-function format_file {
+	format_file() {
 	file="${1}"
 	clang-format -i ${STYLEARG} ${1}
+	git add ${1}
 }
 
 case "${1}" in
