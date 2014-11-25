@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STYLE=$(git config --get hooks.clang-format.style)
+STYLE=$(git config --get hooks.clangformat.style)
 if [ -n "${STYLE}" ] ; then
 	STYLEARG="-style=${STYLE}"
 else
