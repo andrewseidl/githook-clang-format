@@ -8,6 +8,8 @@ This script will run [`clang-format`](http://clang.llvm.org/docs/ClangFormat.htm
 ## Warning
 Do not use this on an existing codebase that isn't already in your desired style. Doing so will lead to a string a dirty commits where your code changes are intermixed with `clang-format`'s formatting changes.
 
+Furthermore, every developer will need to install this hook. If they don't, you will again end up with commits with a mixture of code and formatting changes.
+
 ## Installation
 First, verify that `clang-format` is installed. On Linux this should be included with the regular `clang` package. For MacOSX with Homebrew, you will have to use [tcr's tap](https://github.com/tcr/homebrew-tcr) via `brew tap tcr/tcr` and then `brew install clang-format`.
 
