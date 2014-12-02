@@ -3,7 +3,7 @@ githook-clang-format
 
 Don't use this.
 
-When set as a repository's pre-commit hook, this script will run [`clang-format`](http://clang.llvm.org/docs/ClangFormat.html) on all files in the commit. Proceed with caution.
+This script will run [`clang-format`](http://clang.llvm.org/docs/ClangFormat.html) on all files in a commit when set as a pre-commit hook. Proceed with caution.
 
 ## Warning
 Do not use this on an existing codebase that isn't already in your desired style. Doing so will lead to a string a dirty commits where your code changes are intermixed with `clang-format`'s formatting changes.
