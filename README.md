@@ -1,9 +1,14 @@
 githook-clang-format
 ====================
 
-Don't use this.
+Don't use this. Instead, look into integrating clang-format into your editor.
+- Emacs: http://clang.llvm.org/docs/ClangFormat.html
+- SublimeText: https://github.com/rosshemsley/SublimeClangFormat
+- Vim: https://github.com/rhysd/vim-clang-format
+- Visual Studio: http://llvm.org/builds/
+- Xcode: https://github.com/travisjeffery/ClangFormat-Xcode
 
-This script will run [`clang-format`](http://clang.llvm.org/docs/ClangFormat.html) on all files in a commit when set as a pre-commit hook. Proceed with caution.
+This script will automatically run [`clang-format`](http://clang.llvm.org/docs/ClangFormat.html) on all changed files in a commit when set as a pre-commit hook. Proceed with caution.
 
 ## Warning
 Do not use this on an existing codebase that isn't already in your desired style. Doing so will lead to a string a dirty commits where your code changes are intermixed with `clang-format`'s formatting changes.
