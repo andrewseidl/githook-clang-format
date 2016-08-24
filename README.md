@@ -1,5 +1,9 @@
 githook-clang-format
 ====================
+1. `cp githook-clang-format/clang-format.hook myrepo/.git/hooks/pre-commit`
+2. `cp .clang-format myrepo/`
+3. `cp git-clang-format.py /usr/local/bin/git-clang-format; chmod +x /usr/local/bin/git-clang-format` 
+4. `cp format.sh myrepo/`
 
 Don't use this. Instead, look into integrating clang-format into your editor.
 - Emacs: http://clang.llvm.org/docs/ClangFormat.html
