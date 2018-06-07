@@ -5,7 +5,7 @@ Don't use this. Instead, look into integrating clang-format into your editor.
 - Emacs: http://clang.llvm.org/docs/ClangFormat.html
 - SublimeText: https://github.com/rosshemsley/SublimeClangFormat
 - Vim: https://github.com/rhysd/vim-clang-format
-- Visual Studio: http://llvm.org/builds/
+- Visual Studio: http://llvm.org/builds/, or use the [integrated support in Visual Studio 2017](https://blogs.msdn.microsoft.com/vcblog/2018/03/13/clangformat-support-in-visual-studio-2017-15-7-preview-1/)
 - Xcode: https://github.com/travisjeffery/ClangFormat-Xcode
 
 This script will automatically run [`clang-format`](http://clang.llvm.org/docs/ClangFormat.html) on all changed files in a commit when set as a pre-commit hook. Proceed with caution.
