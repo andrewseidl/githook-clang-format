@@ -7,7 +7,13 @@ STYLE=$(git config --get hooks.clangformat.style)
 if [ -n "${STYLE}" ] ; then
   STYLEARG="-style=${STYLE}"
 else
-  STYLEARG=""
+  # try source root dir
+  STYLE=$GIT_DIR/.clang-format
+  if [ -n "${STYLE}" ] ; then
+    STYLEARG="-style=${STYLE}"
+  else
+    STYLEARG=""
+  fi
 fi
 
 format_file() {
