@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+
 STYLE=$(git config --get hooks.clangformat.style)
 if [ -n "${STYLE}" ] ; then
   STYLEARG="-style=${STYLE}"
