@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# https://stackoverflow.com/questions/12881975/git-pre-commit-hook-failing-in-github-for-mac-works-on-command-line
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 
 STYLE=$(git config --get hooks.clangformat.style)
