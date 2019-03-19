@@ -8,9 +8,9 @@ if [ -n "${STYLE}" ] ; then
   STYLEARG="-style=${STYLE}"
 else
   # try source root dir
-  STYLE=$GIT_DIR/.clang-format
+  STYLE=$(git rev-parse --show-toplevel)/.clang-format
   if [ -n "${STYLE}" ] ; then
-    STYLEARG="-style=${STYLE}"
+    STYLEARG="-style=file"
   else
     STYLEARG=""
   fi
