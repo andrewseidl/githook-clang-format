@@ -20,6 +20,7 @@ format_file() {
   file="${1}"
   ext="${file##*.}"
   ext=$(echo $ext | tr [A-Z] [a-z])
+  # only format C/C++ files
   if [[ ("${ext}" == "h") || ("${ext}" == "hpp") || ("${ext}" == "c") || ("${ext}" == "cpp") || ("${ext}" == "mm")]]; then
     clang-format -i ${STYLEARG} ${1}
   fi
