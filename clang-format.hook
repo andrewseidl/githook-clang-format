@@ -18,13 +18,16 @@ fi
 
 format_file() {
   file="${1}"
-  ext="${file##*.}"
-  ext=$(echo $ext | tr [A-Z] [a-z])
-  # only format C/C++ files
-  if [[ ("${ext}" == "h") || ("${ext}" == "hpp") || ("${ext}" == "c") || ("${ext}" == "cpp") || ("${ext}" == "mm")]]; then
-    clang-format -i ${STYLEARG} ${1}
-  fi
-  git add ${1}
+  # ignore git deleted file
+  if [ -f "${file}" ] ; then
+    ext="${file##*.}"
+    ext=$(echo $ext | tr [A-Z] [a-z])
+    # only format C/C++ files
+    if [[ ("${ext}" == "h") || ("${ext}" == "hpp") || ("${ext}" == "c") || ("${ext}" == "cpp") || ("${ext}" == "mm")]]; then
+      clang-format -i ${STYLEARG} ${1}
+    fi
+    git add ${1}
+  fi  
 }
 
 case "${1}" in
