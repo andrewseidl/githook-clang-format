@@ -18,7 +18,11 @@ fi
 
 format_file() {
   file="${1}"
-  clang-format -i ${STYLEARG} ${1}
+  ext="${file##*.}"
+  ext=$(echo $ext | tr [A-Z] [a-z])
+  if [[ ("${ext}" == "h") || ("${ext}" == "hpp") || ("${ext}" == "c") || ("${ext}" == "cpp") || ("${ext}" == "mm")]]; then
+    clang-format -i ${STYLEARG} ${1}
+  fi
   git add ${1}
 }
 
