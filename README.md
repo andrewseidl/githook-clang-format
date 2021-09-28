@@ -8,6 +8,8 @@ Don't use this. Instead, look into integrating clang-format into your editor.
 - Visual Studio: http://llvm.org/builds/, or use the [integrated support in Visual Studio 2017](https://blogs.msdn.microsoft.com/vcblog/2018/03/13/clangformat-support-in-visual-studio-2017-15-7-preview-1/)
 - Xcode: https://github.com/travisjeffery/ClangFormat-Xcode
 
+Alternatively look into a pre-commit framework such as [pre-commit](https://pre-commit.com/) which makes it easier to manage these hooks. An example hook for clang-format is at [clang-format-precommit](https://github.com/ssciwr/clang-format-precommit).
+
 This script will automatically run [`clang-format`](http://clang.llvm.org/docs/ClangFormat.html) on all changed files in a commit when set as a pre-commit hook. Proceed with caution.
 
 ## Warning
